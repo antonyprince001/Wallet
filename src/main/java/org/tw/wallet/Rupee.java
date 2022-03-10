@@ -19,4 +19,11 @@ public class Rupee {
     public Rupee add(Rupee rupee) throws InvalidAmountException {
         return new Rupee(this.value + rupee.getValue());
     }
+
+    public boolean compare(Rupee anotherRupee) {
+        if (this != anotherRupee) {
+            return false;
+        }
+        return true;
+    }
 }
