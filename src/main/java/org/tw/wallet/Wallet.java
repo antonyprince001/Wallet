@@ -1,18 +1,20 @@
 package org.tw.wallet;
 
-public class Wallet {
-    private float balance;
+import org.tw.exceptions.InvalidAmountException;
 
-    public Wallet() {
-        this.balance = 0.0f;
+public class Wallet {
+    private Rupee balance;
+
+    public Wallet() throws InvalidAmountException {
+        this.balance = new Rupee(0.0f);
     }
 
-    public void add(Rupee rupee) {
+    public void add(Rupee rupee) throws InvalidAmountException {
 
-        this.balance = this.balance + rupee.getValue();
+        this.balance = this.balance.add(rupee);
     }
 
     public float getBalance() {
-        return this.balance;
+        return this.balance.getValue();
     }
 }
