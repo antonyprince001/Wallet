@@ -20,4 +20,9 @@ public class Rupee {
         return new Rupee(this.value + rupee.getValue());
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        Rupee anotherRupee = (Rupee) obj;
+        return this.value == anotherRupee.value;
+    }
 }
