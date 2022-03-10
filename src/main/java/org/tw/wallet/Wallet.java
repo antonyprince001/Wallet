@@ -3,14 +3,21 @@ package org.tw.wallet;
 import org.tw.exceptions.InvalidAmountException;
 
 public class Wallet {
-    private float money;
+    private float balance;
 
-    public boolean addMoney(float money) throws InvalidAmountException {
+    public Wallet() {
+        this.balance = 0.0f;
+    }
 
-        if (money <= 0) {
+    public void add(float rupee) throws InvalidAmountException {
+
+        if (rupee <= 0) {
             throw new InvalidAmountException();
         }
-        this.money += money;
-        return true;
+        this.balance = this.balance + rupee;
+    }
+
+    public float getBalance() {
+        return balance;
     }
 }
