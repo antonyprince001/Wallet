@@ -10,11 +10,12 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class WalletTest {
 
     @Test
-    void shouldAddTenRupeesIntoWallet() throws InvalidAmountException {
+    void shouldAddRupeeOfValueTenIntoWallet() throws InvalidAmountException {
 
         Wallet wallet = new Wallet();
+        Rupee rupee = new Rupee(10.0f);
 
-        wallet.add(10);
+        wallet.add(rupee);
         float balance = wallet.getBalance();
 
         assertThat(balance, is(10.0f));
@@ -25,6 +26,6 @@ public class WalletTest {
 
         Wallet wallet = new Wallet();
 
-        assertThrows(InvalidAmountException.class, () -> wallet.add(-10));
+        assertThrows(InvalidAmountException.class, () -> wallet.add(new Rupee(-10)));
     }
 }
