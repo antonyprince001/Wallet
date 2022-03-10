@@ -3,8 +3,7 @@ package org.tw.wallet;
 import org.junit.jupiter.api.Test;
 import org.tw.exceptions.InvalidAmountException;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.is;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class WalletTest {
@@ -16,9 +15,9 @@ public class WalletTest {
         Rupee rupee = new Rupee(10.0f);
 
         wallet.add(rupee);
-        float balance = wallet.getBalance();
+        Rupee balance = wallet.getBalance();
 
-        assertThat(balance, is(10.0f));
+        assertEquals(new Rupee(10.0f), balance);
     }
 
     @Test

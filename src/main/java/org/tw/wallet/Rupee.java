@@ -12,12 +12,8 @@ public class Rupee {
         this.value = value;
     }
 
-    public float getValue() {
-        return value;
-    }
-
     public Rupee add(Rupee rupee) throws InvalidAmountException {
-        return new Rupee(this.value + rupee.getValue());
+        return new Rupee(this.value + rupee.value);
     }
 
     @Override

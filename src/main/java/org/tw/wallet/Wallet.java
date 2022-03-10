@@ -14,7 +14,7 @@ public class Wallet {
         this.balance = this.balance.add(rupee);
     }
 
-    public float getBalance() {
-        return this.balance.getValue();
+    public Rupee getBalance() {
+        return this.balance;
     }
 }
