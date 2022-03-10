@@ -5,6 +5,7 @@ import org.tw.exceptions.InvalidAmountException;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
 
 public class RupeeTest {
 
@@ -20,23 +21,13 @@ public class RupeeTest {
     }
 
     @Test
-    void shouldReturnFalseWhenOneTenRupeeIsComparedToAnotherTenRupee() throws InvalidAmountException {
+    void shouldAssertNotSameWhenOneTenRupeeIsComparedToAnotherTenRupee() throws InvalidAmountException {
 
-        Rupee rupee = new Rupee(10.0f);
-        Rupee anotherRupee = new Rupee(10.0f);
+        Rupee tenRupee = new Rupee(10.0f);
+        Rupee anotherTenRupee = new Rupee(10.0f);
 
-        boolean result = rupee.compare(anotherRupee);
-
-        assertThat(result, is(false));
+        assertNotSame(tenRupee,anotherTenRupee);
     }
 
-    @Test
-    void shouldReturnTrueWhenOneTenRupeeIsComparedToSameTenRupee() throws InvalidAmountException {
 
-        Rupee rupee = new Rupee(10.0f);
-
-        boolean result = rupee.compare(rupee);
-
-        assertThat(result, is(true));
-    }
 }

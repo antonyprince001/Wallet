@@ -20,10 +20,4 @@ public class Rupee {
         return new Rupee(this.value + rupee.getValue());
     }
 
-    public boolean compare(Rupee anotherRupee) {
-        if (this != anotherRupee) {
-            return false;
-        }
-        return true;
-    }
 }
