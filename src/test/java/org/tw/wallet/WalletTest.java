@@ -22,7 +22,7 @@ public class WalletTest {
     }
 
     @Test
-    void shouldNotAddMoneyAndThrowExceptionIfMoneyIsNegativeOrZero() {
+    void shouldNotAddRupeeAndThrowExceptionIfRupeeIsNegativeOrZero() {
 
         Wallet wallet = new Wallet();
 
