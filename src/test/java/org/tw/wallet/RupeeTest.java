@@ -29,4 +29,14 @@ public class RupeeTest {
 
         assertThat(result, is(false));
     }
+
+    @Test
+    void shouldReturnTrueWhenOneTenRupeeIsComparedToSameTenRupee() throws InvalidAmountException {
+
+        Rupee rupee = new Rupee(10.0f);
+
+        boolean result = rupee.compare(rupee);
+
+        assertThat(result, is(true));
+    }
 }
