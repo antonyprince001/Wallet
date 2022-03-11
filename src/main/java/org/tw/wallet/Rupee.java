@@ -21,6 +21,9 @@ public class Rupee {
         if(obj == null) {
             return false;
         }
+        if(!(obj instanceof Rupee)) {
+            return false;
+        }
         Rupee anotherRupee = (Rupee) obj;
         return this.value == anotherRupee.value;
     }

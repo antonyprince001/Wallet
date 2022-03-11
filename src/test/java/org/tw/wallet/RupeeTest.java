@@ -45,4 +45,12 @@ public class RupeeTest {
 
         assertNotEquals(tenRupee,null);
     }
+
+    @Test
+    void shouldAssertNotEqualWhenTenRupeeIsComparedToAnotherType() throws InvalidAmountException {
+
+        Rupee tenRupee = new Rupee(10.0f);
+
+        assertNotEquals(tenRupee, new Object());
+    }
 }
