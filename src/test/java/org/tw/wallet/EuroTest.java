@@ -10,7 +10,7 @@ public class EuroTest {
     @Test
     void shouldAssertWhenOneRupeeIsComparedToEquivalentEuros() throws InvalidAmountException {
 
-        Euro euro = new Euro(0.0012f);
+        Euro euro = new Euro(0.012f);
         Rupee oneRupee = new Rupee(1);
 
         assertEquals(euro.convertToRupee(), oneRupee);

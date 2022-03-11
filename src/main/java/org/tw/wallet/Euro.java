@@ -3,7 +3,7 @@ package org.tw.wallet;
 import org.tw.exceptions.InvalidAmountException;
 
 public class Euro {
-    public static final float CONVERSION_RATE_EURO_RUPEE = 0.0012f;
+    public static final float CONVERSION_RATE_EURO_RUPEE = 0.012f;
     private float value;
 
     public Euro(float value) throws InvalidAmountException {
