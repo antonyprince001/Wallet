@@ -53,4 +53,14 @@ public class RupeeTest {
 
         assertNotEquals(tenRupee, new Object());
     }
+
+    @Test
+    void shouldAssertEqualWhenTenRupeeIsComparedWithAdditionOfSevenRupeeAndThreeRupee() throws InvalidAmountException {
+
+        Rupee tenRupee = new Rupee(10.0f);
+        Rupee sevenRupee = new Rupee(7.0f);
+        Rupee threeRupee = new Rupee(3.0f);
+
+        assertEquals(tenRupee, sevenRupee.add(threeRupee));
+    }
 }
