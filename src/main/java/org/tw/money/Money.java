@@ -7,13 +7,10 @@ import java.util.Objects;
 
 public class Money {
 
-
     private final float value;
     private final Currency currency;
 
-    private enum Currency {INR, USD, EURO}
-
-    ;
+    private enum Currency {INR, USD, EURO};
 
     private Money(float value, Currency currency) throws InvalidAmountException {
         if (value < 0) {
@@ -34,7 +31,7 @@ public class Money {
 
     @Override
     public boolean equals(Object obj) {
-        if(obj == null || obj.getClass() != Money.class){
+        if (obj == null || obj.getClass() != Money.class) {
             return false;
         }
         Money anotherMoney = (Money) obj;
