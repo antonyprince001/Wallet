@@ -9,6 +9,7 @@ public class USDollarTest {
 
     @Test
     void shouldAssertEqualWhenOneUSDIsComparedToSeventySixRupee() throws InvalidAmountException {
+
         USDollar oneUSDollar = new USDollar(1);
         Rupee seventySixRupee = new Rupee(76);
 
