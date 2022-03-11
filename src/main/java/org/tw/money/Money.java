@@ -34,11 +34,15 @@ public class Money {
 
     @Override
     public boolean equals(Object obj) {
-        if(obj == null){
+        if(obj == null || obj.getClass() != Money.class){
             return false;
         }
         Money anotherMoney = (Money) obj;
         return value == anotherMoney.value;
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(value);
+    }
 }

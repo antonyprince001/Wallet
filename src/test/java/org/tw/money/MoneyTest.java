@@ -46,5 +46,12 @@ public class MoneyTest {
         assertNotEquals(tenRupee, null);
     }
 
+    @Test
+    void shouldAssertNotEqualWhenTenRupeeIsComparedToAnotherType() throws InvalidAmountException {
+
+        Money tenRupee = createRupee(10.0f);
+
+        assertNotEquals(tenRupee, new Object());
+    }
 
 }
