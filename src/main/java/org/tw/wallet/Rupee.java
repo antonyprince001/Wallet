@@ -18,10 +18,7 @@ public class Rupee {
 
     @Override
     public boolean equals(Object obj) {
-        if(obj == null) {
-            return false;
-        }
-        if(!(obj instanceof Rupee)) {
+        if (obj == null || !(obj instanceof Rupee)) {
             return false;
         }
         Rupee anotherRupee = (Rupee) obj;

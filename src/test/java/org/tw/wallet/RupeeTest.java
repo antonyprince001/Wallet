@@ -43,7 +43,7 @@ public class RupeeTest {
 
         Rupee tenRupee = new Rupee(10.0f);
 
-        assertNotEquals(tenRupee,null);
+        assertNotEquals(tenRupee, null);
     }
 
     @Test
