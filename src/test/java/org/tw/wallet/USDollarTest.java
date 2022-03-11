@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class USDollarTest {
 
     @Test
-    void shouldAssertEqualWhenOneUSDIsComparedToSeventySixRupee() throws InvalidAmountException {
+    void shouldAssertEqualWhenSeventySixRupeeIsComparedToOneUSD() throws InvalidAmountException {
 
         USDollar oneUSDollar = new USDollar(1);
         Rupee seventySixRupee = new Rupee(76);
