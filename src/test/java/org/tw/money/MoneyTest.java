@@ -30,5 +30,14 @@ public class MoneyTest {
         assertNotSame(tenRupee, anotherTenRupee);
     }
 
+    @Test
+    void shouldAssertEqualWhenOneTenRupeeIsComparedToAnotherTenRupee() throws InvalidAmountException {
+
+        Money tenRupee = createRupee(10.0f);
+        Money anotherTenRupee = createRupee(10.0f);
+
+        assertEquals(tenRupee, anotherTenRupee);
+    }
+
 
 }
