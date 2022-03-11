@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.tw.exceptions.InvalidAmountException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
 
 public class RupeeTest {
@@ -35,6 +36,13 @@ public class RupeeTest {
         Rupee anotherTenRupee = new Rupee(10.0f);
 
         assertEquals(tenRupee, anotherTenRupee);
+    }
 
+    @Test
+    void shouldAssertNotEqualWhenTenRupeeIsComparedToNull() throws InvalidAmountException {
+
+        Rupee tenRupee = new Rupee(10.0f);
+
+        assertNotEquals(tenRupee,null);
     }
 }

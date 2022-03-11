@@ -18,6 +18,9 @@ public class Rupee {
 
     @Override
     public boolean equals(Object obj) {
+        if(obj == null) {
+            return false;
+        }
         Rupee anotherRupee = (Rupee) obj;
         return this.value == anotherRupee.value;
     }
