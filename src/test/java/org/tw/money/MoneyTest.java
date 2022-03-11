@@ -3,8 +3,7 @@ package org.tw.money;
 import org.junit.jupiter.api.Test;
 import org.tw.exceptions.InvalidAmountException;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotSame;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.tw.money.Money.createRupee;
 
 
@@ -37,6 +36,14 @@ public class MoneyTest {
         Money anotherTenRupee = createRupee(10.0f);
 
         assertEquals(tenRupee, anotherTenRupee);
+    }
+
+    @Test
+    void shouldAssertNotEqualWhenTenRupeeIsComparedToNull() throws InvalidAmountException {
+
+        Money tenRupee = createRupee(10.0f);
+
+        assertNotEquals(tenRupee, null);
     }
 
 
