@@ -18,10 +18,12 @@ public class Money {
     }
 
     public static Money createRupee(float value) throws InvalidAmountException {
+
         return new Money(value, Currency.INR);
     }
 
     public static Money createDollar(float value) throws InvalidAmountException {
+
         return new Money(value, Currency.USD);
     }
 
@@ -31,6 +33,7 @@ public class Money {
     }
 
     public Money add(Money anotherMoney) throws InvalidAmountException {
+
         return createRupee(value + anotherMoney.value);
     }
 
