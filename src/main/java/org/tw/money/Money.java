@@ -1,14 +1,13 @@
 package org.tw.money;
 
 import org.tw.exceptions.InvalidAmountException;
+
 import java.util.Objects;
 
 public class Money {
 
     private final float value;
     private final Currency currency;
-
-    private enum Currency {INR, USD, EURO};
 
     private Money(float value, Currency currency) throws InvalidAmountException {
         if (value < 0) {
@@ -37,11 +36,11 @@ public class Money {
             return false;
         }
         Money anotherMoney = (Money) obj;
-        return value == anotherMoney.value;
+        return currency.convertToBaseValue(this.value) == anotherMoney.currency.convertToBaseValue(anotherMoney.value);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(value);
+        return Objects.hash(value, currency);
     }
 }

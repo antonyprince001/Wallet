@@ -66,12 +66,12 @@ public class MoneyTest {
     }
 
     @Test
-    void shouldAssertEqualWhenOneDollarComparedToSeventySixRupees() throws InvalidAmountException {
+    void shouldAssertEqualWhenSeventySixRupeesComparedToOneDollar() throws InvalidAmountException {
 
         Money oneDollar = createDollar(1);
         Money seventySixRupee = createRupee(76);
 
-        assertEquals(oneDollar,seventySixRupee);
+        assertEquals(oneDollar, seventySixRupee);
     }
 
 }
