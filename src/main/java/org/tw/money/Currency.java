@@ -3,6 +3,7 @@ package org.tw.money;
 public enum Currency {
     INR(1),
     USD(76),
+    EURO(1/0.012f);
 
     private final float baseFactor;
 
