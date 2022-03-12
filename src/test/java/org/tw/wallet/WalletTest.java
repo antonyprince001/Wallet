@@ -2,9 +2,11 @@ package org.tw.wallet;
 
 import org.junit.jupiter.api.Test;
 import org.tw.exceptions.InvalidAmountException;
+import org.tw.money.Money;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.tw.money.Money.createRupee;
 
 public class WalletTest {
 
@@ -12,12 +14,12 @@ public class WalletTest {
     void shouldAddRupeeOfValueTenIntoWallet() throws InvalidAmountException {
 
         Wallet wallet = new Wallet();
-        Rupee rupee = new Rupee(10.0f);
+        Money tenRupee = createRupee(10.0f);
 
-        wallet.add(rupee);
-        Rupee balance = wallet.getBalance();
+        wallet.add(tenRupee);
+        Money balance = wallet.getBalance();
 
-        assertEquals(new Rupee(10.0f), balance);
+        assertEquals(tenRupee, balance);
     }
 
     @Test
@@ -25,6 +27,6 @@ public class WalletTest {
 
         Wallet wallet = new Wallet();
 
-        assertThrows(InvalidAmountException.class, () -> wallet.add(new Rupee(-10)));
+        assertThrows(InvalidAmountException.class, () -> wallet.add(createRupee(-10)));
     }
 }
