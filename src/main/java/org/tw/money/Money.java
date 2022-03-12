@@ -1,8 +1,6 @@
 package org.tw.money;
 
 import org.tw.exceptions.InvalidAmountException;
-import org.tw.wallet.Rupee;
-
 import java.util.Objects;
 
 public class Money {
@@ -23,6 +21,10 @@ public class Money {
     public static Money createRupee(float value) throws InvalidAmountException {
 
         return new Money(value, Currency.INR);
+    }
+
+    public static Money createDollar(float value) throws InvalidAmountException {
+        return new Money(value, Currency.USD);
     }
 
     public Money add(Money anotherMoney) throws InvalidAmountException {

@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.tw.exceptions.InvalidAmountException;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.tw.money.Money.createDollar;
 import static org.tw.money.Money.createRupee;
 
 
@@ -64,5 +65,13 @@ public class MoneyTest {
         assertEquals(tenRupee, sevenRupee.add(threeRupee));
     }
 
+    @Test
+    void shouldAssertEqualWhenOneDollarComparedToSeventySixRupees() throws InvalidAmountException {
+
+        Money oneDollar = createDollar(1);
+        Money seventySixRupee = createRupee(76);
+
+        assertEquals(oneDollar,seventySixRupee);
+    }
 
 }
