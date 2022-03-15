@@ -34,7 +34,7 @@ public class Money {
 
     public Money add(Money anotherMoney) throws InvalidAmountException {
 
-        return createRupee(value + anotherMoney.value);
+        return createRupee(currency.convertToBaseValue(this.value) + anotherMoney.currency.convertToBaseValue(anotherMoney.value));
     }
 
     @Override

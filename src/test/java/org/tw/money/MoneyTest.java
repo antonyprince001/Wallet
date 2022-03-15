@@ -82,4 +82,14 @@ public class MoneyTest {
         assertEquals(oneRupee, pointZeroOneTwoEuro);
     }
 
+    @Test
+    void shouldReturnSeventySevenRupeeWhenOneDollarAndOneRupeeIsAdded() throws InvalidAmountException {
+
+        Money oneRupee = createRupee(1);
+        Money oneDollar = createDollar(1);
+
+        Money resultRupee = oneDollar.add(oneRupee);
+
+        assertEquals(createRupee(77), resultRupee);
+    }
 }

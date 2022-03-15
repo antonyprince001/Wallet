@@ -29,4 +29,6 @@ public class WalletTest {
 
         assertThrows(InvalidAmountException.class, () -> wallet.add(createRupee(-10)));
     }
+
+
 }
