@@ -51,4 +51,7 @@ public class Money {
         return Objects.hash(value, currency);
     }
 
+    public Money convertTo(Currency currency) throws InvalidAmountException {
+        return new Money(currency.convertFromBaseValue(value), currency);
+    }
 }

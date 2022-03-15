@@ -2,6 +2,7 @@ package org.tw.wallet;
 
 import org.junit.jupiter.api.Test;
 import org.tw.exceptions.InvalidAmountException;
+import org.tw.money.Currency;
 import org.tw.money.Money;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -18,7 +19,7 @@ public class WalletTest {
         Money tenRupee = createRupee(10.0f);
 
         wallet.add(tenRupee);
-        Money balance = wallet.getBalance();
+        Money balance = wallet.getBalance(Currency.INR);
 
         assertEquals(tenRupee, balance);
     }
@@ -41,11 +42,12 @@ public class WalletTest {
         Money tenRupee = createRupee(10);
         wallet.add(oneRupee);
         wallet.add(oneDollar);
-        Money initialBalance = wallet.getBalance();
+        Money initialBalance = wallet.getBalance(Currency.INR);
 
         wallet.retrieve(tenRupee);
-        Money updatedBalance = wallet.getBalance();
+        Money updatedBalance = wallet.getBalance(Currency.INR);
 
         assertEquals(initialBalance.subtract(updatedBalance), createRupee(10));
     }
+
 }

@@ -103,4 +103,14 @@ public class MoneyTest {
 
         assertEquals(createRupee(75), resultRupee);
     }
+
+    @Test
+    void shouldConvertSeventySixRupeeToOneDollar() throws InvalidAmountException {
+        Money seventySixRupee = createRupee(76);
+        Money oneDollar = createDollar(1);
+
+        Money convertedToDollar = seventySixRupee.convertTo(Currency.USD);
+
+        assertEquals(oneDollar,convertedToDollar);
+    }
 }

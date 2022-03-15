@@ -14,5 +14,9 @@ public enum Currency {
     public float convertToBaseValue(float value) {
         return value * this.baseFactor;
     }
+
+    public float convertFromBaseValue(float value) {
+        return value / this.baseFactor;
+    }
 };
 
