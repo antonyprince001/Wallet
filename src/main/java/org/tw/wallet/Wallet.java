@@ -12,12 +12,15 @@ public class Wallet {
         this.balance = createRupee(0);
     }
 
-    public void add(Money rupee) throws InvalidAmountException {
-
-        this.balance = this.balance.add(rupee);
+    public void add(Money money) throws InvalidAmountException {
+        this.balance = this.balance.add(money);
     }
 
     public Money getBalance() {
         return this.balance;
+    }
+
+    public void retrieve(Money money) throws InvalidAmountException {
+        this.balance = this.balance.subtract(money);
     }
 }

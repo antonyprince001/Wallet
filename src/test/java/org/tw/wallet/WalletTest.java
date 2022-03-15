@@ -31,4 +31,21 @@ public class WalletTest {
         assertThrows(InvalidAmountException.class, () -> wallet.add(createRupee(-10)));
     }
 
+
+    @Test
+    void shouldRetrieveTenRupeeFromWallet() throws InvalidAmountException {
+
+        Wallet wallet = new Wallet();
+        Money oneRupee = createRupee(1);
+        Money oneDollar = createDollar(1);
+        Money tenRupee = createRupee(10);
+        wallet.add(oneRupee);
+        wallet.add(oneDollar);
+        Money initialBalance = wallet.getBalance();
+
+        wallet.retrieve(tenRupee);
+        Money updatedBalance = wallet.getBalance();
+
+        assertEquals(initialBalance.subtract(updatedBalance), createRupee(10));
+    }
 }
