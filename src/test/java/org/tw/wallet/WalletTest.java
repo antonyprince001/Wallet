@@ -6,12 +6,13 @@ import org.tw.money.Money;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.tw.money.Money.createDollar;
 import static org.tw.money.Money.createRupee;
 
 public class WalletTest {
 
     @Test
-    void shouldAddRupeeOfValueTenIntoWallet() throws InvalidAmountException {
+    void shouldAddTenRupeeIntoWallet() throws InvalidAmountException {
 
         Wallet wallet = new Wallet();
         Money tenRupee = createRupee(10.0f);
@@ -23,12 +24,11 @@ public class WalletTest {
     }
 
     @Test
-    void shouldNotAddRupeeAndThrowExceptionIfRupeeIsNegative() throws InvalidAmountException {
+    void shouldNotAddRupeeIntoWalletIfRupeeIsNegative() throws InvalidAmountException {
 
         Wallet wallet = new Wallet();
 
         assertThrows(InvalidAmountException.class, () -> wallet.add(createRupee(-10)));
     }
-
 
 }

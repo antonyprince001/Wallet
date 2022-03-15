@@ -92,4 +92,15 @@ public class MoneyTest {
 
         assertEquals(createRupee(77), resultRupee);
     }
+
+    @Test
+    void shouldReturnSeventyFiveRupeeWhenOneRupeeIsSubtractedFromOneDollar() throws InvalidAmountException {
+
+        Money oneRupee = createRupee(1);
+        Money oneDollar = createDollar(1);
+
+        Money resultRupee = oneDollar.subtract(oneRupee);
+
+        assertEquals(createRupee(75), resultRupee);
+    }
 }

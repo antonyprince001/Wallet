@@ -37,6 +37,10 @@ public class Money {
         return createRupee(currency.convertToBaseValue(this.value) + anotherMoney.currency.convertToBaseValue(anotherMoney.value));
     }
 
+    public Money subtract(Money anotherMoney) throws InvalidAmountException {
+        return createRupee(currency.convertToBaseValue(this.value) - anotherMoney.currency.convertToBaseValue(anotherMoney.value));
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (obj == null || obj.getClass() != Money.class) {
@@ -50,4 +54,5 @@ public class Money {
     public int hashCode() {
         return Objects.hash(value, currency);
     }
+
 }
