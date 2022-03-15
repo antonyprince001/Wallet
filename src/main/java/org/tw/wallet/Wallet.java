@@ -17,8 +17,8 @@ public class Wallet {
         this.balance = this.balance.add(money);
     }
 
-    public Money getBalance(Currency currency) {
-        return this.balance;
+    public Money getBalance(Currency currency) throws InvalidAmountException {
+        return this.balance.convertTo(currency);
     }
 
     public void retrieve(Money money) throws InvalidAmountException {

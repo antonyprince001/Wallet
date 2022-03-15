@@ -3,7 +3,7 @@ package org.tw.money;
 public enum Currency {
     INR(1),
     USD(76),
-    EURO(1/0.012f);
+    EURO(1 / 0.012f);
 
     private final float baseFactor;
 
@@ -15,7 +15,7 @@ public enum Currency {
         return value * this.baseFactor;
     }
 
-    public float convertFromBaseValue(float value) {
+    public float convertToPreferredValue(float value) {
         return value / this.baseFactor;
     }
 };

@@ -50,4 +50,33 @@ public class WalletTest {
         assertEquals(initialBalance.subtract(updatedBalance), createRupee(10));
     }
 
+    @Test
+    void shouldReturnTotalMoneyInWalletInCurrencyTypeRupee() throws InvalidAmountException {
+
+        Wallet wallet = new Wallet();
+        Money fiftyRupee = createRupee(50);
+        Money oneDollar = createDollar(1);
+        wallet.add(fiftyRupee);
+        wallet.add(oneDollar);
+
+        Money balance = wallet.getBalance(Currency.INR);
+
+        assertEquals(balance, createRupee(126));
+    }
+
+    @Test
+    void shouldReturnTotalMoneyInCurrencyTypeDollar() throws InvalidAmountException {
+
+        Wallet wallet = new Wallet();
+        Money firstRupee = createRupee(78.85f);
+        Money oneDollar = createDollar(1);
+        Money secondRupee = createRupee(149.15f);
+        wallet.add(firstRupee);
+        wallet.add(oneDollar);
+        wallet.add(secondRupee);
+
+        Money balance = wallet.getBalance(Currency.USD);
+
+        assertEquals(balance, createDollar(4));
+    }
 }
