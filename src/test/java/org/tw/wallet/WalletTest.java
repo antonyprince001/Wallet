@@ -65,7 +65,7 @@ public class WalletTest {
     }
 
     @Test
-    void shouldReturnTotalMoneyInCurrencyTypeDollar() throws InvalidAmountException {
+    void shouldReturnTotalMoneyInWalletInCurrencyTypeDollar() throws InvalidAmountException {
 
         Wallet wallet = new Wallet();
         Money firstRupee = createRupee(78.85f);
